@@ -1,0 +1,9 @@
+{
+    "Ho_ten":"Lap trinh vien Javascript",
+    "Diem":[8,9,10],
+    "Lap_trinh_vien":{
+        "php":"lap trinh vien php",
+        "java":"hoc lap trinh java",
+        "nodejs":"Lap trinh vien nodejs"
+    }
+}

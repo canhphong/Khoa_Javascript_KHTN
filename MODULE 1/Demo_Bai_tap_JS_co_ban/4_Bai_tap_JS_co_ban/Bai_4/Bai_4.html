@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <h1>Nhập vào đây năm dương lịch:
+    <input type="text" id="namDuongLich">
+  </h1>
+  <button id="btnDoi">=></button>
+  <h1>Năm âm lịch là:
+    <lable type="text" id="namAmLich"></lable>
+  </h1>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="thu_vien.js"></script>
+  <script>
+
+    btnDoi.onclick = () => {
+      var dl = namDuongLich.value
+      var can = dl % 10
+      var chi = dl % 12
+      var strCan = strChi = al = ""
+
+      switch (can) {
+        case 0:
+          strCan = "Canh"
+          break
+        case 1:
+          strCan = "Tân"
+          break
+        case 2:
+          strCan = "Nhâm"
+          break
+        case 3:
+          strCan = "Quí"
+          break
+        case 4:
+          strCan = "Giáp"
+          break
+        case 5:
+          strCan = "Ất"
+          break
+        case 6:
+          strCan = "Bính"
+          break
+        case 7:
+          strCan = "Đinh"
+          break
+        case 8:
+          strCan = "Mậu"
+          break
+        case 9:
+          strCan = "Kỷ"
+          break
+
+      }
+      switch (chi) {
+        case 0:
+          strChi = "Thân"
+          break
+        case 1:
+          strChi = "Dậu"
+          break
+        case 2:
+          strChi = "Tuất"
+          break
+        case 3:
+          strChi = "Hợi"
+          break
+        case 4:
+          strChi = "Tý"
+          break
+        case 5:
+          strChi = "Sửu"
+          break
+        case 6:
+          strChi = "Dần"
+          break
+        case 7:
+          strChi = "Mẹo"
+          break
+        case 8:
+          strChi = "Thìn"
+          break
+        case 9:
+          strChi = "Tỵ"
+          break
+        case 10:
+          strChi = "Ngọ"
+          break
+        case 11:
+          strChi = "Mùi"
+          break
+
+      }
+      al = `${strCan} ${strChi}`
+      namAmLich.innerHTML = al
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
