@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>IIS Express</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .CHON {
+            background: black;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <img src="http://localhost:1001/PET.png" class="btn" />
+        <div class="text-center btn btn-outline-primary">MÔ HÌNH - KỸ THUẬT - CÔNG NGHỆ
+            <br>
+            <small> DANH SÁCH HỌC SINH</small>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="btn btn-outline-danger btn-block" id="Th_Thong_bao">
+            KHUNG THÔNG BÁO
+        </div>
+    </div>
+    <div class="container-fluid">
+
+
+        <div class="container-fluid">
+            <fieldset class="border m-2 p-2 text-info">
+                <legend>THAO TÁC TRÊN DANH SÁCH ĐIỆN THOẠI</legend>
+
+                <button id="Th_Home" class="btn btn-outline-primary">Tất cả</button>
+                <button id="Th_Android" class="btn btn-outline-primary">Android</button>
+                <button id="Th_Iphone" class="btn btn-outline-primary">Iphone</button>
+
+
+                <hr> Nhập Giá trị tìm:
+                <input type="text" id="Th_gtTim" onkeyup="KeyCode(event)">
+                <button id="Th_Tim" class="btn btn-primary">
+                    <i class="fa fa-search-plus"></i>
+                </button>
+                <button id="Th_Loc" class="btn btn-primary">
+                    Lọc theo Tên
+                </button>
+                <button id="Th_Bo_Loc" class="btn btn-primary">
+                    Bỏ Lọc
+                </button>
+                <hr>
+                <button id="Th_Sap_Tang" class="btn btn-primary" onclick="Sap_Tang()">
+                    Sắp xếp theo Tên (A->Z)
+                </button>
+                <button id="Th_Sap_Giam" class="btn btn-primary" onclick="Sap_Giam()">
+                    Sắp xếp theo Tên (Z->A)
+                </button>
+            </fieldset>
+        </div>
+
+        <fieldset class="border m-2 p-2">
+            <legend></legend>
+            <div id="Th_Danh_sach"></div>
+        </fieldset>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../Xu_ly/Xu_ly_3L.js"></script>
+    <script>
+        var Danh_sach = Doc_Du_lieu_Dien_thoai()
+        console.log(Danh_sach.length)
+        Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+
+        function Tao_The_hien_Danh_sach(Danh_sach, Th_Cha) {
+            Th_Cha.innerHTML = ""
+            Danh_sach.forEach((Dien_thoai, index) => {
+                //console.log(hs)
+                var The_hien = document.createElement("div")
+                var Chuoi_HTML = `    
+                <div class="card" style="width:18rem;float:left;margin:5px">
+                    <img class="card-img-top" src="http://localhost:1001/${Dien_thoai.Ma_so}.png" alt="">
+                    <div class="card-body">
+                        <p class="card-title text-primary text-sm">${Dien_thoai.Ten}</p>
+                        <p class="card-text text-danger">${Dien_thoai.Don_gia_Ban}</p>
+                    </div>
+                </div>
+                `
+                The_hien.innerHTML = Chuoi_HTML
+                Th_Cha.appendChild(The_hien)
+                The_hien.onclick = () => {
+                    The_hien.classList.toggle("CHON") // bấm vào hình sẽ bị mờ
+                    Th_Thong_bao.innerHTML = `Mã số:${Dien_thoai.Ma_so}`
+                }
+            })
+        }
+
+        // Xử lý các nút chức năng
+        // Th_All.onclick = () => {
+        //     Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach.length}`
+        //     Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        // }
+
+        // Th_Android.onclick = () => {
+        //     var Danh_sach_android = Danh_sach.filter(x => x.Nhom_Dien_thoai.Ma_so == "ANDROID")
+        //     Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach_android.length}`
+        //     Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        // }
+        // Th_Iphone.onclick = () => {
+        //     var Danh_sach_iphone = Danh_sach.filter(x => x.Nhom_Dien_thoai.Ma_so == "IPHONE")
+        //     Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach_iphone.length}`
+        //     Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        // }
+
+
+        Th_Home.onclick = () => {
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+            Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach.length} cái`
+
+        }
+        Th_Android.onclick = () => {
+            var Danh_sach_Android = Danh_sach.filter(x => x.Nhom_Dien_thoai.Ma_so == "ANDROID")
+            Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach_Android.length} cái`
+            Tao_The_hien_Danh_sach(Danh_sach_Android, Th_Danh_sach)
+        }
+
+        Th_Iphone.onclick = () => {
+            var Danh_sach_Iphone = Danh_sach.filter(x => x.Nhom_Dien_thoai.Ma_so == "IPHONE")
+            Th_Thong_bao.innerHTML = `Danh sách điện thoại: ${Danh_sach_Iphone.length} cái`
+            Tao_The_hien_Danh_sach(Danh_sach_Iphone, Th_Danh_sach)
+        }
+
+
+        //
+        // Th_Xoa_cuoi.onclick = () => {
+        //     Danh_sach.pop()
+        //     Th_Thong_bao.innerHTML = `Tổng số học sinh ${Danh_sach.length}`
+        //     Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        // }
+
+        // Th_Tim.onclick = () => {
+        //     var tu_khoa = Th_gtTim.value
+        //     var Hop_le = tu_khoa.trim() != ""
+        //     if (Hop_le) {
+        //         var Chi_so = Danh_sach.indexOf(tu_khoa)
+
+        //         var Noi_dung_Thong_bao = (Chi_so >= 0) ? `Tìm thấy <b>${tu_khoa}</b> tại vị trí: ${Chi_so + 1}` : `Không tìm thấy ${tu_khoa} trong danh sách`
+        //         Th_Thong_bao.innerHTML = `${Noi_dung_Thong_bao}`
+
+
+        //         /*
+        //         var Kq = Danh_sach.find(x=>x == tu_khoa)
+        //         if(Kq === undefined) {
+        //             console.log("Không")
+        //         }
+        //         else {
+        //             console.log("Có")
+        //         }
+        //         */
+
+
+        //         /* 
+        //         var Kq = Danh_sach.filter(x=>x == tu_khoa)
+        //         console.log(Kq)
+        //          Nhập Tí sẽ ra => ["Tí"]
+        //        */
+        //     }
+
+        //     else {
+        //         Th_Thong_bao.innerHTML = `Dữ liệu không hợp lệ`
+        //     }
+        // }
+
+
+        // Th_Loc.onclick = () => {
+        //     var tu_khoa = Th_gtTim.value
+        //     var Hop_le = tu_khoa.trim() != ""
+        //     if (Hop_le) {
+        //         var Kq_Loc = Danh_sach.filter(x => x == tu_khoa)
+        //         console.log(Kq_Loc)
+
+        //         var Noi_dung_Thong_bao = (Kq_Loc >= 0) ? `Lọc thấy các từ ${Kq_Loc}` : `Không tìm thấy ${Kq_Loc} trong danh sách`
+        //         Th_Thong_bao.innerHTML = `${Noi_dung_Thong_bao}`
+        //     }
+
+        //     else {
+        //         Th_Thong_bao.innerHTML = `Dữ liệu không hợp lệ`
+        //     }
+        // }
+
+
+        /*
+                Th_Loc.onclick = () => {
+                    var gtTim = Th_gtTim.value
+                    var Hop_le = gtTim.trim() != ""
+                    if (Hop_le) {
+                        var Danh_sach_Loc = Danh_sach.filter(x => x.toLowerCase().includes(gtTim.toLowerCase()))
+                        var So_phan_tu = Danh_sach_Loc.length
+                        if (So_phan_tu > 0) {
+                            Tao_The_hien_Danh_sach(Danh_sach_Loc, Th_Danh_sach)
+                            Th_Thong_bao.innerHTML = `Tổng số Học sinh: ${Danh_sach_Loc.length}`
+                        } else {
+                            Th_Thong_bao.innerHTML = `Không tìm thấy: ${gtTim} trong Danh sách `
+                        }
+        
+                    } else {
+                        Th_Thong_bao.innerHTML = `Dữ liệu không hợp lệ`
+                    }
+                }
+        
+                Th_Bo_Loc.onclick = () => {
+                    Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+                    Th_Thong_bao.innerHTML = `Tổng số Học sinh: ${Danh_sach.length}`
+                }
+        
+                function KeyCode(event) {
+                    if (event.keyCode == 8) {
+                        var gtTim = event.target.value
+                        var Danh_sach_Loc = Danh_sach.filter(x => x.toLowerCase().includes(gtTim.toLowerCase()))
+                        Tao_The_hien_Danh_sach(Danh_sach_Loc, Th_Danh_sach)
+                    }
+                }
+        */
+        function Sap_Tang() {
+            // Là Số, dùng cách nảy để sắp xếp tăng cho Số
+            // Danh_sach.sort((a,b)=>{
+            //     return a-b
+            // })
+
+            // Là Chuỗi, dùng cách nảy để sắp xếp tăng cho Chuỗi
+            Danh_sach.sort((a, b) => a.Ten.localeCompare(b.Ten))
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+
+        }
+        function Sap_Giam() {
+            // Là Số, dùng cách nảy để sắp xếp giảm cho Số
+            // Danh_sach.sort((a,b)=>{
+            //     return b-a 
+            // })
+
+            // Là Chuỗi, dùng cách nảy để sắp xếp giảm cho Chuỗi
+            Danh_sach.sort((a, b) => b.Ten.localeCompare(a.Ten))
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        }
+    </script>
+</body>
+
+</html>
