@@ -188,12 +188,24 @@
         }
 
         function KeyCode(event) {
-            if (event.keyCode == 13) {
+            if (event.keyCode == 8) {
                 var gtTim = event.target.value
                 var Danh_sach_Loc = Danh_sach.filter(x => x.toLowerCase().includes(gtTim.toLowerCase()))
                 Tao_The_hien_Danh_sach(Danh_sach_Loc, Th_Danh_sach)
             }
         }
+
+        Th_Sap_Tang.onclick = () => {
+            var Sap_xep_az = Danh_sach.sort()
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        }
+
+        Th_Sap_Giam.onclick = () => {
+            var Sap_xep_za = Danh_sach.reverse()
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        }
+
+
     </script>
 </body>
 
