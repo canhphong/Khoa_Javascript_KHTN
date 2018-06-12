@@ -41,8 +41,8 @@
                 <legend>THAO TÁC TRÊN DANH SÁCH ĐIỆN THOẠI</legend>
 
                 <button id="Th_Home" class="btn btn-outline-primary">Tất cả</button>
-                <button id="Th_Android" class="btn btn-outline-primary">Android</button>
-                <button id="Th_Iphone" class="btn btn-outline-primary">Iphone</button>
+                <button id="Th_Android" class="btn btn-success">Android</button>
+                <button id="Th_Iphone" class="btn btn-warning">Iphone</button>
 
 
                 <hr> Nhập Giá trị tìm:
@@ -57,11 +57,17 @@
                     Bỏ Lọc
                 </button>
                 <hr>
-                <button id="Th_Sap_Tang" class="btn btn-primary" onclick="Sap_Tang()">
+                <button id="Th_Sap_Tang" class="btn btn-primary" onclick="Sap_Ten_Tang()">
                     Sắp xếp theo Tên (A->Z)
                 </button>
-                <button id="Th_Sap_Giam" class="btn btn-primary" onclick="Sap_Giam()">
+                <button id="Th_Sap_Giam" class="btn btn-primary" onclick="Sap_Ten_Giam()">
                     Sắp xếp theo Tên (Z->A)
+                </button>
+                <button id="Th_Sap_Gia_Tang" class="btn btn-outline-danger" onclick="Sap_Tang_Gia()">
+                    Sắp xếp theo Giá Tăng
+                </button>
+                <button id="Th_Sap_Gia_Giam" class="btn btn-outline-danger" onclick="Sap_Giam_Gia()">
+                    Sắp xếp theo Giá Giảm
                 </button>
             </fieldset>
         </div>
@@ -234,7 +240,7 @@
                     }
                 }
         */
-        function Sap_Tang() {
+        function Sap_Ten_Tang() {
             // Là Số, dùng cách nảy để sắp xếp tăng cho Số
             // Danh_sach.sort((a,b)=>{
             //     return a-b
@@ -245,7 +251,7 @@
             Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
 
         }
-        function Sap_Giam() {
+        function Sap_Ten_Giam() {
             // Là Số, dùng cách nảy để sắp xếp giảm cho Số
             // Danh_sach.sort((a,b)=>{
             //     return b-a 
@@ -253,6 +259,22 @@
 
             // Là Chuỗi, dùng cách nảy để sắp xếp giảm cho Chuỗi
             Danh_sach.sort((a, b) => b.Ten.localeCompare(a.Ten))
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        }
+
+        function Sap_Tang_Gia() {
+            // Lầ số
+            Danh_sach.sort((a,b)=> {
+                return parseInt(a.Don_gia_Ban) - parseInt(b.Don_gia_Ban)
+            })
+            Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
+        }
+
+        function Sap_Giam_Gia() {
+            // Lầ số
+            Danh_sach.sort((a,b)=> {
+                return parseInt(b.Don_gia_Ban) - parseInt(a.Don_gia_Ban)
+            })
             Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
         }
     </script>
