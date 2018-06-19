@@ -47,15 +47,17 @@
 
                 <hr> Nhập Giá trị tìm:
                 <input type="text" id="Th_gtTim" onkeyup="KeyCode(event)">
-                <button id="Th_Tim" class="btn btn-primary">
-                    <i class="fa fa-search-plus"></i>
+                <button id="Th_Tim" class="btn btn-danger">
+                    <i class="fa fa-search"></i>
                 </button>
-                <button id="Th_Loc" class="btn btn-primary">
-                    Lọc theo Tên
-                </button>
-                <button id="Th_Bo_Loc" class="btn btn-primary">
-                    Bỏ Lọc
-                </button>
+
+                <select onchange="Loc_Theo_Don_Gia(this.value)" class="btn btn-outline-danger">
+                    <option value="">Chọn Giá Cần Lọc</option>
+                    <option value="0-1900000">Giá nhỏ hơn 2 triệu</option>
+                    <option value="2000000-4999999">Giá từ 2 triệu đến 5 triệu</option>
+                    <option value="5000000-50000000">Giá từ 5 triệu đến 50 triệu</option>
+                </select>
+
                 <hr>
                 <button id="Th_Sap_Tang" class="btn btn-primary" onclick="Sap_Ten_Tang()">
                     Sắp xếp theo Tên (A->Z)
@@ -91,14 +93,13 @@
         console.log(Danh_sach.length)
         Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
 
-        function Tao_The_hien_Danh_sach(Danh_sach, Th_Cha) {
+  function Tao_The_hien_Danh_sach(Danh_sach, Th_Cha) {
             Th_Cha.innerHTML = ""
             Danh_sach.forEach((Dien_thoai, index) => {
-                //console.log(hs)
                 var The_hien = document.createElement("div")
                 var Chuoi_HTML = `    
-                <div class="card" style="width:18rem;float:left;margin:5px">
-                    <img class="card-img-top" src="http://localhost:1001/${Dien_thoai.Ma_so}.png" alt="">
+                <div class="card p-2" style="width:18rem;float:left;margin:5px;">
+                    <img class="card-img-top" src="http://localhost:1001/${Dien_thoai.Ma_so}.png" style="width:15rem" alt="">
                     <div class="card-body">
                         <p class="card-title text-primary text-sm">${Dien_thoai.Ten}</p>
                         <p class="card-text text-danger">${Dien_thoai.Don_gia_Ban}</p>
@@ -108,11 +109,25 @@
                 The_hien.innerHTML = Chuoi_HTML
                 Th_Cha.appendChild(The_hien)
                 The_hien.onclick = () => {
-                    The_hien.classList.toggle("CHON") // bấm vào hình sẽ bị mờ
+                    The_hien.classList.toggle("CHON")
                     Th_Thong_bao.innerHTML = `Mã số:${Dien_thoai.Ma_so}`
+                    // Lưu thông tin đặt hàng
+                    var Noi_dung=JSON.stringify(Dien_thoai)
+                    sessionStorage.setItem("gioHang",Noi_dung)
+                    window.location="MH_Gio_hang.html"
                 }
             })
+            Th_Thong_bao.innerHTML = `Danh sách Điện thoại (${Danh_sach.length})`
         }
+        function KeyCode(event) {
+            if (event.keyCode == 13) {
+                var gtTim = event.target.value
+                var Danh_sach_Loc = Danh_sach.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+
+                Tao_The_hien_Danh_sach(Danh_sach_Loc, Th_Danh_sach)
+            }
+        }
+
 
         // Xử lý các nút chức năng
         // Th_All.onclick = () => {
@@ -157,39 +172,54 @@
         //     Tao_The_hien_Danh_sach(Danh_sach, Th_Danh_sach)
         // }
 
-        // Th_Tim.onclick = () => {
-        //     var tu_khoa = Th_gtTim.value
-        //     var Hop_le = tu_khoa.trim() != ""
-        //     if (Hop_le) {
-        //         var Chi_so = Danh_sach.indexOf(tu_khoa)
+        Th_Tim.onclick = () => {
+            var tu_khoa = Th_gtTim.value
+            var Hop_le = tu_khoa.trim() != ""
+            if (Hop_le) {
+                // var Chi_so = Danh_sach.indexOf(tu_khoa)
 
-        //         var Noi_dung_Thong_bao = (Chi_so >= 0) ? `Tìm thấy <b>${tu_khoa}</b> tại vị trí: ${Chi_so + 1}` : `Không tìm thấy ${tu_khoa} trong danh sách`
-        //         Th_Thong_bao.innerHTML = `${Noi_dung_Thong_bao}`
-
-
-        //         /*
-        //         var Kq = Danh_sach.find(x=>x == tu_khoa)
-        //         if(Kq === undefined) {
-        //             console.log("Không")
-        //         }
-        //         else {
-        //             console.log("Có")
-        //         }
-        //         */
+                // var Noi_dung_Thong_bao = (Chi_so >= 0) ? `Tìm thấy <b>${tu_khoa}</b> tại vị trí: ${Chi_so + 1}` : `Không tìm thấy ${tu_khoa} trong danh sách`
+                // Th_Thong_bao.innerHTML = `${Noi_dung_Thong_bao}`
 
 
-        //         /* 
-        //         var Kq = Danh_sach.filter(x=>x == tu_khoa)
-        //         console.log(Kq)
-        //          Nhập Tí sẽ ra => ["Tí"]
-        //        */
-        //     }
+                
+                // var Kq = Danh_sach.find(x=>x == tu_khoa)
+                // if(Kq === undefined) {
+                //     console.log("Không")
+                // }
+                // else {
+                //     console.log("Có")
+                // }
+                
 
-        //     else {
-        //         Th_Thong_bao.innerHTML = `Dữ liệu không hợp lệ`
-        //     }
-        // }
 
+                /* 
+                var Kq = Danh_sach.filter(x=>x == tu_khoa)
+                console.log(Kq)
+                 Nhập Tí sẽ ra => ["Tí"]
+               */
+
+            }
+
+            else {
+                Th_Thong_bao.innerHTML = `Dữ liệu không hợp lệ`
+            }
+        }
+
+
+        function Loc_Theo_Don_Gia(Gia_Dieu_Kien) {
+            var Ds = Gia_Dieu_Kien.split("-");
+            console.log(Ds)
+            var GiaBatDau = parseInt(Ds[0])
+            var GiaKetThuc = parseInt(Ds[1])
+            console.log(GiaBatDau)
+            console.log(GiaKetThuc)
+            var Danh_sach_Loc = Danh_sach.filter(x => parseInt(x.Don_gia_Ban) >= GiaBatDau && parseInt(x.Don_gia_Ban) <= GiaKetThuc)
+            console.log(Danh_sach_Loc)
+            var Kq = GiaBatDau > Danh_sach_Loc < Ds[1]
+            console.log(Kq)
+            Tao_The_hien_Danh_sach(Danh_sach_Loc, Th_Danh_sach)
+        }
 
         // Th_Loc.onclick = () => {
         //     var tu_khoa = Th_gtTim.value
