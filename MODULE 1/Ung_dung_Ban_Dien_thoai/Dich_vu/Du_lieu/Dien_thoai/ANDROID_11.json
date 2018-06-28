@@ -14,14 +14,18 @@
 			"So_luong": "1",
 			"Don_gia_Ban": 2640000,
 			"Tien": 2640000,
-			"Trang_thai": "CHUA_GIAO_HANG",
+			"Trang_thai": "DA_GIAO_HANG",
 			"Khach_hang": {
 				"Ho_ten": "",
 				"Dien_thoai": "",
 				"Email": "",
 				"Dia_chi": ""
 			},
-			"So_Phieu_Dat": 1
+			"So_Phieu_Dat": 1,
+			"Nhan_vien": {
+				"Ho_ten": "Trần Anh",
+				"Ma_so": "NV_1"
+			}
 		}
 	],
 	"Danh_sach_Phieu_Ban": [],
