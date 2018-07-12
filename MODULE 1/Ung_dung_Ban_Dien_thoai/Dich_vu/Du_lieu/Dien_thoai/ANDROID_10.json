@@ -1,11 +1,11 @@
 {
-	"Ten": "LEAGOO Alfa 8 8GB",
+	"Ten": "LEAGOO Alfa 9 16GB",
 	"Ma_so": "ANDROID_10",
-	"Don_gia_Ban": 15800000,
-	"Don_gia_Nhap": 13800000,
+	"Don_gia_Ban": "25800000",
+	"Don_gia_Nhap": "14800000",
 	"Nhom_Dien_thoai": {
-		"Ten": "Android",
-		"Ma_so": "ANDROID"
+		"Ten": "IPHONE",
+		"Ma_so": "IPHONE"
 	},
 	"Danh_sach_Phieu_Dat": [
 		{
