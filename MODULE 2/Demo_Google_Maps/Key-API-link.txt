@@ -1,0 +1,14 @@
+https://developers.google.com/maps/documentation/javascript/get-api-key
+
+https://console.developers.google.com
+
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  type="text/javascript"></script>
+
+https://www.latlong.net/
+
+10.823099
+
+106.629664
