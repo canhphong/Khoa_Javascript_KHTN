@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="Th_Ho_ten"></div>
+
+<body>
+    <script>
+        /*
+        console.log("a");
+        console.log("b");
+        setTimeout(()=>{
+            console.log("c");
+        },1000)
+        console.log("d");
+        */
+
+        function Doc_Du_lieu_Dong_bo() {
+            var Chuoi = "Bất đồng bộ"
+            var Xu_ly_HTTP = new XMLHttpRequest()
+            Xu_ly_HTTP.open("GET", "Ho_ten.json", false) // Đồng bộ
+            Xu_ly_HTTP.send()
+            Chuoi = Xu_ly_HTTP.responseText
+            return Chuoi
+
+        }
+
+        //var Ho_ten=Doc_Du_lieu_Dong_bo()
+        //Th_Ho_ten.innerHTML=Ho_ten;
+        //console.log(Ho_ten);
+
+
+        // Call back
+
+        function Doc_Du_lieu_Bat_Dong_bo(Ham_sau_khi_Xu_ly) {
+            var Xu_ly_HTTP = new XMLHttpRequest()
+            Xu_ly_HTTP.onload = () => {
+                var Chuoi = Xu_ly_HTTP.responseText
+                Ham_sau_khi_Xu_ly(Chuoi)
+            }
+            Xu_ly_HTTP.open("GET", "Ho_ten.json") // Bất đồng bộ
+            Xu_ly_HTTP.send()
+        }
+
+        Doc_Du_lieu_Bat_Dong_bo((Du_lieu) => {
+            Th_Ho_ten.innerHTML = Du_lieu;
+        })
+
+
+        // Call back
+        /*
+        function Tong_hai_so(a,b,Ham_sau_khi_Xu_ly){
+            var tong=0
+            setTimeout(()=>{
+                b=7
+                tong=a+b
+                Ham_sau_khi_Xu_ly(tong)
+            },1000)
+            
+        }
+        // Gọi
+        Tong_hai_so(3,4,(Kq)=>{
+            console.log(Kq)
+        })
+        */
+
+        // Promise ES6
+        var Tong = (a, b) => {
+            return new Promise((Ket_qua, Loi) => {
+                var tong = 0
+                setTimeout(() => {
+                    b = 7
+                    tong = a + b
+                    Ket_qua(tong)
+                }, 1000)
+            })
+        }
+        // Gọi
+        Tong(3, 4).then(kq => {
+            console.log(kq)
+        })
+        
+        // async - await
+
+
+
+
+
+    </script>
+</body>
+
+</html>
