@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("5b53226733881c1694b0dd6a"), 
+    "Ten" : "Iphone 1", 
+    "Ma_so" : "IPHONE_1", 
+    "Don_gia" : "23000000"
+}
+{ 
+    "_id" : ObjectId("5b53229933881c1694b0dd74"), 
+    "Ten" : "Iphone 2", 
+    "Ma_so" : "IPHONE_2", 
+    "Don_gia" : "12000000"
+}
+{ 
+    "_id" : ObjectId("5b5322b933881c1694b0dd77"), 
+    "Ten" : "Iphone 3", 
+    "Ma_so" : "IPHONE_3", 
+    "Don_gia" : "14000000"
+}
+{ 
+    "_id" : ObjectId("5b5322c833881c1694b0dd78"), 
+    "Ten" : "Iphone 4", 
+    "Ma_so" : "IPHONE_4", 
+    "Don_gia" : "7000000"
+}
+{ 
+    "_id" : ObjectId("5b5322da33881c1694b0dd79"), 
+    "Ten" : "Iphone 5", 
+    "Ma_so" : "IPHONE_5", 
+    "Don_gia" : "2000000"
+}

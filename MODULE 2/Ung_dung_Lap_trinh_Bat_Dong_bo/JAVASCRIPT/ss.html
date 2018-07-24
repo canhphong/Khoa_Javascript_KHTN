@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //     function sayHello(name, callback) {
+    //         var myName = name.toUpperCase() + ", Hello";
+    //         return callback(myName);
+    //     }
+
+    //     var result = sayHello("khanh", function (arg) {
+    //         return arg;
+    //     });
+
+    //     alert(result);
+
+    // function sayHello(name, callback) {
+
+    // }
+
+execute()
+
+function execute() {
+  findResult()
+  console.log("end of execute")
+}
+
+function findResult() {
+  for(var i = 0; i < 100000; i++) {
+    var j = 100
+  }
+
+  console.log('before findResult')
+
+  db.collection('hospitals').findOne({name: '医療法人神甲会隈病院'},
+    function(err, result){
+       console.log('inner findResult callback')
+    }
+  )
+
+  console.log('after findResult')
+}
+
+    </script>
+</body>
+
+</html>

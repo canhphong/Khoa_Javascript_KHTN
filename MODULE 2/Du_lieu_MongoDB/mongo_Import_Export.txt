@@ -1,0 +1,18 @@
+Chay command tren link C:\Program Files\MongoDB\Server\4.0\bin
+
+# Export to json
+
+mongoexport -d database_name -c collection_name -o outfile.json
+
+mongoexport -d Ban_Dien_thoai -c Dien_thoai -o d:/Test/Dien_thoai.json
+
+# Import  file json
+
+mongoimport -d database_name -c collection_name outfile.json
+ 
+mongoimport -d Ban_Dien_thoai -c Dien_thoai d:/test/Dien_thoai.json
+
+-------------------------------------------------------------------------
+
+
+
