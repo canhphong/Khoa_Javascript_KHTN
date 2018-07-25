@@ -115,71 +115,39 @@ class XL_LUU_TRU {
   }
 
 
+  async Ghi_moi_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
+    try {
+      var db = await DbConnection.Get()
+      var Kq = await db.collection(Loai_Doi_tuong).insert(Doi_tuong)
+      return Kq
+
+    } catch (Loi) {
+      console.log(Loi)
+    }
+  }
 
   
+  async  Cap_nhat_Doi_tuong(Loai_Doi_tuong, Bieu_thuc_dieu_kien, Gia_tri_Cap_nhat) {
+    try {
+      var Db = await DbConnection.Get()
+      var Kq = await db.collection(Loai_Doi_tuong).update(Bieu_thuc_dieu_kien, Gia_tri_Cap_nhat)
+      return Kq
+
+    } catch (Loi) {
+      console.log(Loi)
+    }
+  }
 
 
-  // Ghi_moi_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
-  //   var Kq = ""
-  //   try {
-  //     var Duong_dan = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     var Chuoi = JSON.stringify(Doi_tuong, null, "\t")
-  //     File.writeFileSync(Duong_dan, Chuoi, "UTF-8")
-  //   } catch (Loi) {
-  //     Kq = Loi
-  //   }
-
-  //   return Kq
-  // }
-  // Cap_nhat_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
-  //   return this.Ghi_moi_Doi_tuong(Loai_Doi_tuong, Doi_tuong)
-  // }
-  // Thanh_ly_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
-  //   var Kq = ""
-  //   try {
-
-  //     var Duong_dan = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     var Duong_dan_Thanh_ly = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//Thanh_ly//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     File.unlinkSync(Duong_dan)
-  //     var Chuoi = JSON.stringify(Doi_tuong, null, "\t")
-  //     File.writeFileSync(Duong_dan_Thanh_ly, Chuoi, "UTF-8")
-  //   } catch (Loi) {
-  //     Kq = Loi
-  //   }
-
-  //   return Kq
-  // }
-  // Phuc_hoi_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
-  //   var Kq = ""
-  //   try {
-
-  //     var Duong_dan = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     var Duong_dan_Thanh_ly = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//Thanh_ly//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     File.unlinkSync(Duong_dan_Thanh_ly)
-  //     var Chuoi = JSON.stringify(Doi_tuong, null, "\t")
-  //     File.writeFileSync(Duong_dan, Chuoi, "UTF-8")
-  //   } catch (Loi) {
-  //     Kq = Loi
-  //   }
-
-  //   return Kq
-  // }
-  // Xoa_Doi_tuong(Loai_Doi_tuong, Doi_tuong) {
-  //   var Kq = ""
-  //   try {
-  //     var Duong_dan = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     var Duong_dan_Xoa = Thu_muc_Du_lieu + "//" + Loai_Doi_tuong + "//Xoa//" + Doi_tuong.Ma_so + "." + Cong_nghe
-  //     File.unlinkSync(Duong_dan)
-  //     var Chuoi = JSON.stringify(Doi_tuong, null, "\t")
-  //     File.writeFileSync(Duong_dan_Xoa, Chuoi, "UTF-8")
-
-  //   } catch (Loi) {
-  //     Kq = Loi
-  //   }
-
-  //   return Kq
-  // }
-
+  async Xoa_Doi_tuong(Loai_Doi_tuong, Bieu_thuc_dieu_kien) {
+    try {
+      var db = await DbConnection.Get()
+      var Kq = await db.collection(Loai_Doi_tuong).remove(Bieu_thuc_dieu_kien)
+      return Kq
+    } catch (Loi) {
+      console.log(Loi)
+    }
+  }
 }
 
 var Xu_ly = new XL_LUU_TRU()
