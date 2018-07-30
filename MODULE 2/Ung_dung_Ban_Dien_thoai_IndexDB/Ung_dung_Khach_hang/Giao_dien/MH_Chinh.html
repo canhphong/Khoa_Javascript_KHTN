@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <button id="Doc_Danh_sach_dien_thoai">Doc_Danh_sach_dien_thoai</button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+        
+    <script src="../Xu_ly/Xu_ly_3L.js"></script>
+    <script src="../node_modules/idb/lib/idb.js"></script>
+    <script src="../Xu_ly/Xu_ly_IndexedDB.js"></script>
+
+    <script>
+        var Du_lieu = Doc_Danh_sach_Dien_thoai()
+        var Cua_hang = Du_lieu.Cua_hang
+        var Danh_sach_Dien_thoai = []
+        if (!('indexedDB in window')) {
+            console.log("Trình duyệt của bạn KHÔNG có hỗ trợ indexedDB")
+        }
+        else {
+            console.log("Trình duyệt của bạn có hỗ trợ indexedDB")
+            console.log(Du_lieu)
+            Tao_Co_so_Du_lieu_indexedDB();
+            Tao_Du_lieu_indexedDB(Du_lieu.Danh_sach_Dien_thoai)
+        }
+
+        function Tao_Du_lieu_indexedDB(ds) {
+            ds.forEach(Dien_thoai=>{
+                idbDienthoai.set(Dien_thoai.Ma_so, Dien_thoai)
+            })
+        }
+
+        Doc_Danh_sach_dien_thoai.onclick=()=>{
+            idbDienthoai.getAll().then(Kq=>{
+                Danh_sach_Dien_thoai = Kq
+                console.log(Danh_sach_Dien_thoai)
+            })
+        }
+
+    </script>
+</body>
+
+</html>

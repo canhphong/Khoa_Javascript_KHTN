@@ -1,0 +1,14 @@
+{
+  "name": "ung_dung_ban_dien_thoai_mongodb",
+  "version": "1.0.0",
+  "description": "ung dung ban dien thoai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CanhPhong",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.1.1"
+  }
+}

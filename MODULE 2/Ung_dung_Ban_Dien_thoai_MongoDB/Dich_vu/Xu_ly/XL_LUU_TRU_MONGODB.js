@@ -126,7 +126,7 @@ class XL_LUU_TRU {
     }
   }
 
-  
+
   async  Cap_nhat_Doi_tuong(Loai_Doi_tuong, Bieu_thuc_dieu_kien, Gia_tri_Cap_nhat) {
     try {
       var Db = await DbConnection.Get()
@@ -152,5 +152,3 @@ class XL_LUU_TRU {
 
 var Xu_ly = new XL_LUU_TRU()
 module.exports = Xu_ly
-
-
