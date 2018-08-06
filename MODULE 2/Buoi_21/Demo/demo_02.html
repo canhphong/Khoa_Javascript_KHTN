@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Học bootstrap</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+<style type="text/css">
+body
+{
+	margin:10px;
+	
+}
+.grid-demo > div {
+
+	border: 1px solid #ddd;
+	opacity: 0.8;
+	line-height:30px
+
+}
+.box
+{
+	margin-bottom:10px;	 
+}
+.breadcrumb
+{
+	margin-bottom:5px;	 
+}
+.clearfix
+{
+	padding:5px;
+}
+.activeMenu
+{
+	background-color:#999;
+	color:#FFF;
+	
+}
+.navbar-color
+{
+	background-color:#41A80C;
+		
+}
+.navbar-color .navbar-nav > li > a
+{
+    color:#F9C7B0;
+	font-weight:800;
+
+}
+.navbar-color .navbar-brand
+{
+	color:#F9C7B0;
+	font-weight:800;
+}
+p > .glyphicon
+    {
+     font-size:50px;
+    }
+.tab-content
+{
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px green solid;
+}
+.glyphicon-chevron-left, .glyphicon-chevron-right
+{
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <!-- Logo -->
+        <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/logo.png" alt="Logo T3h" class="img-responsive" />
+        </div>
+        <div class="col-xs-12  col-sm-8 col-md-8 text-right hidden-xs ">
+            <!-- Đào tạo -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Đào tạo </button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Lập trình &amp; CSDL</a></li>
+                    <li><a href="">Đồ Họa đa truyền thông</a></li>
+                    <li><a href="">Kiểm thử phần mềm</a></li>
+                    <li><a href="">Mạng máy tính</a></li>
+                </ul>
+            </div>
+            <!-- Dịch vụ -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger">Dịch vụ </button>
+                <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="">Phát triển phần mềm</a></li>
+                    <li><a href="">Đào tạo theo yêu cầu</a></li>
+                    <li><a href="">Quản lý Hệ thống mạng</a></li>
+                    <li><a href="">Cung cấp thiết bị - phần mềm</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- page Header -->
+    <div class="row">
+        <div class="col-sx-12 -col-sm-12 col-md-12">
+            <div class="page-header ">
+				<h1 class="text-danger text-center text-capitalize ">Học bootstrap 3 <small class="text-info" >miễn phí cùng với T3h.vn</small></h1>
+                <blockquote>
+                    <p>Lớp Lập Trình Viên PHP </p>
+                    <small>Bởi <cite>Trung tâm tin học - Trường ĐHKHTN</cite></small>
+                </blockquote>            
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-color"> <!-- navbar-fixed-bottom--> 
+        <div  class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" class="navbar-brand">T3h.vn</a>
+            </div>
+            <div class="navbar-collapse collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li class="active" ><a href=""><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-user"></span> Giới thiệu</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-education"></span> Dịch vụ</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-envelope"></span> Liên hệ</a></li>
+            </ul>
+            <form action="" class="navbar-form navbar-right" method="post">
+                <div class="form-group hidden-sm">
+                    <input type="search" class="form-control" placeholder="search ...">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-group-xs"><span class="glyphicon glyphicon-search"></span> </button>
+                </div> 
+            </form>
+            </div>
+        </div>
+    </nav>
+    <!-- breadcrumb -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 visible-lg">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">carousel</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+            <h4 class="well well-sm text-danger">
+                <span class="text-left"><strong>Chương trình đào tạo</strong></span>
+                <span class="pull-right text-primary">
+                <span class="glyphicon glyphicon-chevron-left" onclick="$('#carousel-CTDT').carousel('prev')" ></span> 
+                <span class="glyphicon glyphicon-chevron-right" onclick="$('#carousel-CTDT').carousel('next')" ></span>
+                </span>
+            </h4>
+            <div id="carousel-CTDT" class="carousel slide" data-ride="carousel">
+                <center>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="img/tin/tin_1.png" alt="lập trình viên">
+                    </div>
+                    <div class="item">
+                      <img src="img/tin/tin_2.png" alt="...">
+                      
+                    </div>
+                    <div class="item">
+                      <img src="img/tin/tin_3.png" alt="...">
+                    </div>
+                  </div>
+                </center>  
+            </div>    
+            
+            <h4 class="well well-sm text-primary">
+                <span class="text-left"><strong>Dịch vụ</strong></span>
+                <span class="pull-right text-danger">
+                <span class="glyphicon glyphicon-chevron-left" onclick="$('#carousel-DV').carousel('prev')" ></span> 
+                <span class="glyphicon glyphicon-chevron-right" onclick="$('#carousel-DV').carousel('next')" ></span>
+                </span>
+            </h4>
+            <div id="carousel-DV" class="carousel slide" data-ride="carousel">
+                <center>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="img/tin/tin_1.png" alt="lập trình viên">
+                    </div>
+                    <div class="item">
+                      <img src="img/tin/tin_2.png" alt="...">
+                      
+                    </div>
+                    <div class="item">
+                      <img src="img/tin/tin_3.png" alt="...">
+                    </div>
+                  </div>
+                </center>  
+            </div>
+            <br>
+            
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8">
+    	    <div class="row">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <img src="img/slider/tong-khai-giang1-k223.jpg" alt="lập trình viên">
+                      <div class="carousel-caption">
+                        <h3>Tiêu đề</h3>
+                        <p>Nội dung mô tả</p>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="img/slider/ltv-beginning-k224.jpg" alt="...">
+                      <div class="carousel-caption">
+                        <h3>Tiêu đề</h3>
+                        <p>Nội dung mô tả</p> 
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="img/slider/slide-ltv-v2-1400-k222.jpg" alt="...">
+                      <div class="carousel-caption">
+                        <h3>Tiêu đề</h3>
+                        <p>Nội dung mô tả</p> 
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                </div>
+                <hr>    
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+	<div class="row panel  navbar-color">
+    	<div class="col-sm-6 col-md-6 text-left panel-heading">
+        	<strong>Trung Tâm Tin Học - ĐHKHTN</strong>
+        </div> 
+        <div class="col-sm-6 col-md-6 text-right panel-heading hidden-xs">
+            Design and coding by T3h
+        </div>
+    </div>    
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$('#carousel-CTDT,#carousel-DV').carousel({
+  interval: false
+})
+
+
+</script>
+</body>
+</html>
