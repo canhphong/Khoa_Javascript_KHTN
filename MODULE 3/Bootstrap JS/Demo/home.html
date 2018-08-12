@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Học bootstrap</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+<style type="text/css">
+body {
+      position: relative;
+      padding: 20px 0px 0px 0px; 
+  }
+  #section1 {padding-top:50px;height:500px}
+  #section2 {padding-top:50px;}
+  #section3 {padding-top:50px;}
+  #section4 {padding-top:50px;}
+  #section5 {padding-top:50px;}
+  .head{padding-bottom: 20px}
+  .myslider{margin-top: -10px; margin-bottom: 10px}
+  .dichvu
+  {
+   font-size:50px;
+  }
+  
+</style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="row head">
+        <!-- Logo -->
+        <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/logo.png" alt="Logo T3h" class="img-responsive" />
+        </div>
+        <div class="col-xs-12  col-sm-8 col-md-8 text-right hidden-xs ">
+            <!-- Đào tạo -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Đào tạo </button>
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">Lập trình &amp; CSDL</a></li>
+                    <li><a href="">Đồ Họa đa truyền thông</a></li>
+                    <li><a href="">Kiểm thử phần mềm</a></li>
+                    <li><a href="">Mạng máy tính</a></li>
+                </ul>
+            </div>
+            <!-- Dịch vụ -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger">Dịch vụ </button>
+                <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><a href="">Phát triển phần mềm</a></li>
+                    <li><a href="">Đào tạo theo yêu cầu</a></li>
+                    <li><a href="">Quản lý Hệ thống mạng</a></li>
+                    <li><a href="">Cung cấp thiết bị - phần mềm</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->    
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="">T3h</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Giới thiệu</a></li>
+          <li><a href="#section2">Đào tạo</a></li>
+          <li><a href="#section3">Tin tức</a></li>
+          <li><a href="#section4">Dịch vụ</a></li>
+          <li><a href="#section5">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<!--end nav-->
+<!--slider-->
+<div class="container">
+  <div class="row">
+    <div id="carousel-example-generic" class="carousel slide myslider" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/slider/tong-khai-giang1-k223.jpg" alt="Tổng khai giảng">
+          </div>
+          <div class="item">
+            <img src="img/slider/ltv-beginning-k224.jpg" alt="Lập trình viên">
+          </div>
+          <div class="item">
+            <img src="img/slider/slide-wordpress-1400-k222.jpg" alt="wordpress">
+          </div>
+          <div class="item">
+            <img src="img/slider/slide-ltv-v2-1400-k222.jpg" alt="wordpress">
+          </div>
+        </div>
+    </div>  
+  </div>
+</div>
+<!--end slider-->
+<div id="section1" class="container-fluid">
+  <div class="row">
+    <center>
+      <h1 class="text-danger"><strong>Giới thiệu</strong></h1>
+      <img src="img/ngoisao_cam.png" width="250px">
+    </center>
+    <div class="col-xs-12 col-sm-8 col-md-8">
+        <h2>Được thành lập từ <span class="label label-default">06-08-1986</span></h2>
+        <h3>Chương trình học <span class="label label-primary">Đa dạng</span> theo xu hướng thực tế</h3>
+        <h4><span class="label label-success">20+</span> cơ sở trên cả nước.</h4>
+        <h5><span class="label label-info">100+</span> Chương trình đào tạo.</h5>
+        <h6><span class="label label-warning">1.000.000+</span> học viên đã hoàn thành khóa học.</h6>
+        <p class="lead">Chúng tôi <span class="label label-danger">cam kết</span> không ngừng 
+        <span class="label label-danger">nỗ lực</span> để mang đến cho học viên những trải nghiệm học tập<a href="#">[...]</a></p>
+        
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+        <img src="img/logoTTTH.png" class="img-responsive img-rounded" />
+    </div>
+  </div>
+</div>
+<div id="section2" class="container-fluid">
+  <div class="row">
+    <center>
+      <h1 class="text-danger"><strong>Chương trình đào tạo</strong></h1>
+      <img src="img/ngoisao_cam.png" width="250px">
+    </center>
+    <div class="text-danger text-center">
+                Hãy quan sát xung quanh và bạn sẽ thấy <span style="color:#f07120;font-weight:bold">Lập trình</span> đã, đang và sẽ mở ra nhiều cơ hội mới cho tất cả mọi người.</p>
+                <p style="text-indent:15px;text-align:center">
+                <span style="font-weight:bold">Thường xuyên cập nhật công nghệ phù hợp thực tế</span>, các khóa học <span style="color:#f07120;font-weight:bold">Lập trình &amp; CSDL</span> sẽ giúp bạn vững kiến thức, chắc kỹ năng và ứng dụng vào thực tế cuộc sống. Cùng khám phá tri thức và ứng dụng,bạn nhé !</p>
+            </div>
+            <!--Tabs-->
+            <ul class="nav nav-pills nav-justified" role="tablist"">
+              <li class="active">
+                <a data-toggle="tab" href="#home">Chuyên đề dài hạn</a>
+              </li>
+              <li><a data-toggle="tab" href="#menu1">Chuyên đề ngắn hạn</a></li>
+              <li><a data-toggle="tab" href="#menu2">Cho người mới bắt đầu</a></li>
+            </ul>
+            <!--Tab content-->
+            <div class="tab-content">
+              <!-- Tab Chuyên đề dài hạn-->
+            <div id="home" class="tab-pane fade in active">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                            <img class="img-responsive" src="img/cd_daihan/Lap_trinh_vien_ma_nguon_mo_PHP.jpg">
+                        </a>
+                        <span class="text-success"><strong>Lập trình viên mã nguồn mở PHP</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                            <img class="img-responsive" src="img/cd_daihan/lap-trinh-vien-java.jpg">
+                        </a>
+                        <span class="text-success"><strong>Lập trình viên Java</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                            <img class="img-responsive" src="img/cd_daihan/lap-trinh-vien-net.jpg">
+                        </a>
+                        <span class="text-success"><strong>Lập trình viên công nghệ .NET</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                            <img class="img-responsive" src="img/cd_daihan/lap_trinh_vien_web_chuyen_nghiep.png">
+                        </a>
+                        <span class="text-success"><strong>Lập trình viên Web chuyên nghiệp</strong></span>
+                    </div>
+                </div>
+            </div>
+              <!-- Tab Chuyên đề ngắn hạn-->
+              <div id="menu1" class="tab-pane fade">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/phat-trien-ung-dung-web-java.jpg" >
+                        </a>
+                        <span class="text-success"><strong>Lập trình Java từ cơ bản đến nâng cao</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/lap_trinh_net.jpg">
+                        </a>
+                        <span class="text-success"><strong>Lập trình ứng dụng .Net trên Visual Studio 2015</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/lap-trinh-vien-php.jpg">
+                            
+                        </a>
+                        <span class="text-success"><strong>Lập trình PHP từ cơ bản đến nâng cao</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/phat-trien-ung-dung-oracle-1.jpg">
+                            
+                        </a>
+                        <span class="text-success"><strong>Phát triển ứng dụng Oracle</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/he_quan_tri_co_so_du_lieu_SQL_Server_2014.jpg">
+                            
+                        </a>
+                        <span class="text-success"><strong>Hệ quản trị cơ sở dữ liệu SQL</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/cd_nganhan/lap-trinh-c.jpg">
+                            
+                        </a>
+                        <span class="text-success"><strong>Lập trình C & C++</strong></span>
+                    </div>
+
+                </div>
+              </div>
+              <!-- Tab Người bắt đầu-->
+              <div id="menu2" class="tab-pane fade">
+                <div class="row text-center">
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/bd/xay-dung-website-wordpress.jpg" alt="LTV PHP">
+                        </a>
+                        <span class="text-success"><strong>Xây dựng website chuẩn SEO với Wordpress</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/bd/lap-trinh-wen-html-boostrap.jpg"  alt="LTV java">
+                        </a>
+                        <span class="text-success"><strong>Lập trình Web HTML5, CSS3, JQuery, Bootstrap</strong></span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <a href="#" class="thumbnail">
+                          <img class="img-responsive" src="img/bd/khoa-hoc-angular-js.jpg"  alt="LTV .Net">
+                        </a>
+                        <span class="text-success"><strong>Xây dựng Single Page Applications với Angular 2</strong></span>
+                    </div>
+                </div>
+              </div>
+            </div> <!--end Tab content-->
+  </div>    
+</div>
+<div id="section3" class="container-fluid">
+  <div class="row">
+    <center>
+      <h1 class="text-danger"><strong>Tin tức</strong></h1>
+      <img src="img/ngoisao_cam.png" width="250px">
+    </center>
+    <!--Media-->
+    <div class="media">
+        <a class="pull-left" href="">
+        <img class="media-object" src="img/tin/tin_1.png" alt="html-boostrap">
+        </a>
+        <h4 class="media-heading text-primary">Lập trình viên Front – End trọn gói với HTML5, CSS3, jQuery, Bootstrap + AngularJS</h4>
+        <p class="text-muted" ><span class="glyphicon glyphicon-time"></span> ngày 13-05-2016</p>
+        <p class="text-justify">
+        Lập trình viên Front – End là người xây dựng các chức năng giao tiếp, tương tác trực tiếp với người dùng,  là người trang trí nội thất cho căn nhà do các lập trình viên back-end xây dựng. Khi bạn duyệt các trang web, từ font chữ, màu sắc cho tới các menu chọn và các thanh trượt, các hình ảnh chuyển động quảng cáo, các hiệu ứng chuyển màu hay di chuyển văn bản, hình ành… đều là tác phẩm của Lập trình viên Front – End.
+        </p>
+        <a href=""><span class="pull-right text-danger" >Xem tiếp</span></a>
+    </div>
+    <div class="media">
+        <a class="pull-left" href="">
+        <img class="media-object" src="img/tin/tin_2.png" alt="angular-js">
+        </a>
+        <h4 class="media-heading text-primary">LTV Web PHP– học không chỉ để biết</h4>
+        <p class="text-muted"><span class="glyphicon glyphicon-time"></span> ngày 05-04-2016</p>
+        <p class="text-justify">
+        Có nhiều bạn khi quyết định đăng ký học LTV Web PHP vì thích lập trình, học để biết, học để bổ sung kiến thức, học vì muốn tìm hiểu thêm về lập trình web, học vì muốn phục vụ cho đồ án tại trường, học vì muốn tích lũy kinh nghiệm, học vì muốn nâng cao kiến thức lập trình PHP, học vì muốn có thêm cơ hội việc làm… Mong muốn có thể khác nhau nhưng có lẽ điểm chung nhất của các bạn chọn học chương trình dài hạn LTV Web PHP là có sản phẩm hoàn chỉnh và nắm được cách ứng dụng kiến thức vào thực tế sao cho hiệu quả.
+        </p>
+        <a href=""><span class="pull-right text-danger" >Xem tiếp</span></a>
+    </div>
+    <div class="media">
+        <a class="pull-left" href="">
+        <img class="media-object" src="img/tin/tin_3.png" alt="wordpress">
+        </a>
+        <h4 class="media-heading text-primary">Thông báo phiên bản mới của Lập trình viên WEB</h4>
+        <p class="text-muted"><span class="glyphicon glyphicon-time"></span> ngày 04-04-2016</p>
+        <p class="text-justify">
+        Như bạn đã biết vào tháng 02 năm 2014, Trung tâm đã chính thức giới thiệu khóa học LTV Web 6 tháng dựa trên khảo sát, tìm hiểu xu hướng học tập nâng cao kiến thức online kết hợp offline và nhu cầu thực tế của các doanh nghiệp phần mềm. Sau hơn 1 năm triển khai, đồng hành của các bạn trẻ yêu thích CNTT, khóa học đã giúp nhiều bạn học viên tự tin hơn, trưởng thành hơn, xây dựng được nhiều sản phẩm thực tế cho mình, cho khách hàng, tạo dựng được nền tảng vững chắc cho công việc và sự nghiệp sau này.
+        </p>
+        <a href=""><span class="pull-right text-danger" >Xem tiếp</span></a>
+    </div>
+
+    <!--end Media-->
+    <!-- Page Navigation  --> 
+    <div class="row text-center">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li class="disabled"><a href="#" >2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    <div>
+  </div>    
+</div>
+<div id="section4" class="container-fluid">
+  <div class="row">
+    <center>
+      <h1 class="text-danger"><strong>Dịch vụ</strong></h1>
+      <img src="img/ngoisao_cam.png" width="250px">
+    </center>
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h4>Tư vấn: <span class="glyphicon glyphicon-earphone"> </span> (08)38.351.056 - (08)38.337.980</h4> </div>
+        <div class="panel-body text-center">
+            <div class="col-sm-4 col-md-4 text-success">
+              <p><span class="glyphicon glyphicon-edit dichvu"></span></p><h4>Phát triển phần mềm</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 text-danger">
+              <p><span class="glyphicon glyphicon-leaf dichvu"></span></p><h4>Đào tạo theo yêu cầu</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 text-info">
+              <p><span class="glyphicon glyphicon-cloud-upload dichvu"></span></p><h4>Tư vấn quản lý dự án</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 text-warning">
+              <p><span class="glyphicon glyphicon-thumbs-up dichvu"></span></p><h4>Cung cấp thiết bị phần mềm</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 text-primary">
+              <p><span class="glyphicon glyphicon-tasks dichvu"></span></p><h4>Quản lý Hệ thống mạng</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 text-danger">
+              <p><span class="glyphicon glyphicon-phone dichvu"></span></p><h4>Hệ thống hội nghị truyền hình MobiMeeting</h4>
+            </div>
+        </div>
+    </div>
+  </div>  
+</div>
+<div id="section5" class="container-fluid">
+  <div class="row">
+    <center>
+      <h1 class="text-danger"><strong>Liên hệ</strong></h1>
+      <img src="img/ngoisao_cam.png" width="250px">
+    </center>
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+      <div class="panel panel-success">
+      <div class="panel-heading">Địa chỉ: 227 Nguyễn Văn Cừ - Chi nhánh: 357 Lê Hồng Phong </div>
+      <div class="panel-body">
+          <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6364784694456!2d106.68043791433668!3d10.762474262395168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x043900f1d4539a3d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBLaG9hIGjhu41jIFThu7Egbmhpw6puIC0gxJBIIFF14buRYyBnaWEgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1sen!2s!4v1462002421604" class="embed-responsive-item" width="60%" height="300px" allowfullscreen></iframe>
+          </div>
+      </div>
+    </div>  
+    </div>
+    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Thông tin liên hệ</div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+              <div class="form-group">
+                  <label class="control-label col-xs-2">Họ tên</label>
+                  <div class="col-xs-10">
+                      <input type="text" class="form-control" placeholder="Họ tên">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label col-xs-2">Email</label>
+                  <div class="col-xs-10">
+                      <input type="email" class="form-control" placeholder="Email">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label col-xs-2">Tiêu đề</label>
+                  <div class="col-xs-10">
+                      <input type="text" class="form-control" placeholder="Tiêu đề">
+                  </div>   
+              </div>
+              <div class="form-group">
+                  <label class="control-label col-xs-2">Nội dung</label>
+                  <div class="col-xs-10">
+                      <input type="text" class="form-control" placeholder="Nội dung">
+                  </div>   
+              </div>
+              <div class="form-group">
+                  <div class="col-xs-offset-2 col-xs-10">    
+                      <button type="submit" class="btn btn-primary btn-group-sm active">Gởi</button>
+                      <button type="reset" class="btn btn-warning btn-group-sm ">Làm lại</button>
+                  </div>
+              </div>    
+          </form>
+        </div>
+    </div>  
+    </div>
+  </div>
+</div>
+
+<!--footer-->
+<div class="container-fluid clear-fix">
+  <div class="row panel panel-primary">
+      <div class="col-sm-6 col-md-6 text-left panel-heading">
+          <strong>Trung Tâm Tin Học - ĐHKHTN</strong>
+        </div> 
+        <div class="col-sm-6 col-md-6 text-right panel-heading hidden-xs">
+            Design and coding by T3h
+        </div>
+    </div>  
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
+<script>
+ $(window).bind('scroll', function () {
+            var navHeight = 20; // custom nav height
+            var mediaWidth = $(window).width();
+            ($(window).scrollTop() > navHeight) ? $('nav').addClass('navbar-fixed-top') : $('nav').removeClass('navbar-fixed-top');
+        });
+</script>
+
+</body>
+</html>
