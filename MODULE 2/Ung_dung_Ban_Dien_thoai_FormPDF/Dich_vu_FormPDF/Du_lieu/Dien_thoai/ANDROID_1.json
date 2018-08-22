@@ -1,11 +1,11 @@
 {
-	"Ten": "Philips S307",
+	"Ten": "Philips S307 111",
 	"Ma_so": "ANDROID_1",
-	"Don_gia_Ban": "4800000",
-	"Don_gia_Nhap": "3800000",
+	"Don_gia_Ban": "5800000",
+	"Don_gia_Nhap": "3833000",
 	"Nhom_Dien_thoai": {
-		"Ten": "ANDROID",
-		"Ma_so": "ANDROID"
+		"Ten": "IPHONE",
+		"Ma_so": "IPHONE"
 	},
 	"Danh_sach_Phieu_Dat": [
 		{

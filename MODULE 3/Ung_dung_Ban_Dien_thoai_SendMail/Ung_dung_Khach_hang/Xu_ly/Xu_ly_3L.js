@@ -1,6 +1,6 @@
 
 //var Dia_chi_Dich_vu = "https://phong-data.herokuapp.com"
-var Dia_chi_Dich_vu = "http://localhost:1000"
+var Dia_chi_Dich_vu = "https://phong-data.herokuapp.com"
 var Dia_chi_Media = "https://phong-media.herokuapp.com"
 //************** Xử lý Lưu trữ ***********
 var Thu_muc_PDF = "../Tap_tin_PDF"
